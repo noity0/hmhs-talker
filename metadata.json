@@ -1,0 +1,6 @@
+{
+  "name": "Urdu Live AI Voice Call",
+  "description": "Real-time interactive voice calling AI in Urdu with live listening, voice responses, incoming AI calls, and conversational speech.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

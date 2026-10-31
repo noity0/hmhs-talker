@@ -1,66 +1,126 @@
-# 🎙️ HMHS Talker — Urdu Live AI Voice Call
+# HMHS Talker — Urdu Voice AI Conversation Prototype
 
-> A real-time conversational AI voice experience designed for live Urdu speech interaction.
+[![GitHub stars](https://img.shields.io/github/stars/noity0/hmhs-talker?style=flat-square)](https://github.com/noity0/hmhs-talker/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/noity0/hmhs-talker?style=flat-square)](https://github.com/noity0/hmhs-talker/issues)
+[![Last commit](https://img.shields.io/github/last-commit/noity0/hmhs-talker?style=flat-square)](https://github.com/noity0/hmhs-talker/commits/main)
 
-[![AI](https://img.shields.io/badge/AI-Gemini-blue)](https://ai.google.dev/) [![React](https://img.shields.io/badge/React-19-61dafb)](https://react.dev/) [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6)](https://www.typescriptlang.org/) [![Voice](https://img.shields.io/badge/Voice-Live%20Conversation-purple)](#)
+> An experimental conversational interface exploring spoken Urdu interaction with a Gemini-powered assistant.
 
-## 🌟 Overview
+HMHS Talker is a React and TypeScript voice-assistant project with an Express backend. It combines a microphone-oriented interface, AI response generation, and a call-style conversation experience.
 
-HMHS Talker explores conversational AI through live voice interaction in Urdu. The project is built around microphone input, server-side Gemini processing, and spoken AI responses.
+## Features
 
-### ✨ Highlights
+- Voice-first conversation interface.
+- Urdu-focused interaction experience.
+- Gemini-powered response generation.
+- Call-style conversation UI.
+- Responsive React interface.
+- Server-side API integration.
 
-- 🎤 Live microphone-based conversations
-- 🗣️ Urdu-focused voice interaction
-- 🤖 Gemini-powered AI responses
-- 📞 Incoming AI-call style experience
-- ⚡ Real-time conversational workflow
-- 📱 Modern responsive interface
+Speech recognition and voice playback can vary by browser, operating system, language support, and microphone permissions. This repository should be treated as an experimental voice interface rather than a guaranteed telephony or phone-call service.
 
-## 🔄 Conversation Flow
+## How the flow works
 
 ```text
-Microphone → Speech Input → AI Processing → Response → Voice Output
+User speaks
+    |
+    v
+Browser microphone / speech input
+    |
+    v
+Express API + Gemini
+    |
+    v
+Assistant response
+    |
+    v
+Browser speech output / conversation UI
 ```
 
-## 🛠️ Tech Stack
+## Technology stack
 
-- React 19 + TypeScript
-- Vite
-- Express + Node.js
-- Google Gemini via `@google/genai`
-- Tailwind CSS
-- Motion
-- Lucide React
+- React 19 and TypeScript
+- Vite 6
+- Node.js and Express
+- Google Gemini SDK (`@google/genai`)
+- Tailwind CSS, Motion, and Lucide React
 
-## 🚀 Run locally
+## Requirements
 
-```bash
+- Node.js 22 LTS recommended
+- npm
+- Gemini API key
+- Microphone and a modern browser for voice interaction
+
+## Setup on Windows
+
+```powershell
+git clone https://github.com/noity0/hmhs-talker.git
+Set-Location hmhs-talker
 npm install
+```
+
+Create your environment file:
+
+```powershell
+Copy-Item .env.example .env
+notepad .env
+```
+
+Add your own Gemini key:
+
+```dotenv
+GEMINI_API_KEY=your_gemini_api_key
+APP_URL=http://localhost:3000
+```
+
+Keep credentials private and never commit `.env`.
+
+## Run locally
+
+```powershell
 npm run dev
 ```
 
-Production:
+For a production build:
 
-```bash
+```powershell
 npm run build
 npm start
 ```
 
-The app requires microphone permission for voice features. Configure AI credentials through environment variables and never commit secrets.
+## Available scripts
 
-## 🔎 Discoverability
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Express/TypeScript development server |
+| `npm run build` | Build the frontend and bundle the server |
+| `npm start` | Start the built server |
+| `npm run preview` | Preview the frontend build |
+| `npm run lint` | Run TypeScript checks |
 
-Relevant topics/search terms:
+## Troubleshooting
 
-`urdu-ai` `urdu-voice-ai` `voice-assistant` `conversational-ai` `ai-calling` `voice-ai` `gemini-ai` `gemini-api` `speech-ai` `react` `typescript` `vite` `express` `tailwindcss` `hmhs`
+- **Microphone unavailable:** Check browser permissions and confirm that the page is served from localhost or a secure HTTPS origin.
+- **No spoken response:** Check browser speech-synthesis support and the selected system voice.
+- **Gemini request fails:** Confirm `GEMINI_API_KEY` in the local environment and restart the server.
+- **Port conflict:** Review the server output and free or reconfigure the port in the hosting environment.
 
-Want to help? **⭐ Star the repository**, share it with developers interested in voice AI, or contribute useful improvements through issues and pull requests. Please keep engagement genuine.
+## Privacy
 
-## 👤 Author
+Microphone input and conversation text can be sensitive. Only enable microphone access when needed, review the configured AI provider's privacy terms, and avoid sharing confidential conversations.
 
-**Hafiz Mohammed Huzaifa Shamim (HMHS)**
+## Contributing
 
-## 📄 License
+Bug reports should include browser/OS details, steps to reproduce, and non-sensitive error logs. Accessibility, language handling, and robust voice-state management are useful areas for improvement.
 
-See the repository license for usage terms.
+- [Issues](https://github.com/noity0/hmhs-talker/issues)
+- [Source](https://github.com/noity0/hmhs-talker)
+
+## License
+
+Check the repository for a `LICENSE` file. If none is present, standard copyright restrictions apply.
+
+## Search terms
+
+Urdu voice assistant, Urdu AI, voice AI, speech interface, conversational AI, Gemini API, React, TypeScript, Express, Vite, HMHS Talker.
